@@ -67,7 +67,7 @@ class ClickerElement {
     }
 
     public css(prop: string, val?: string): string | void {
-        if(val) {
+        if (val) {
             const o = this._element.style[prop]
 
             this._element.style[prop] = val
@@ -76,7 +76,7 @@ class ClickerElement {
 
             return
         }
-        
+
         this._element.style[prop]
     }
 }
