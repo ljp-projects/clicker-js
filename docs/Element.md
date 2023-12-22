@@ -8,10 +8,12 @@ The `ClickerElementList` class defined in `src/ElementList.ts` is a version of t
 
 The `ClickerElement` class has the following properties.
 
-* `element: HTMLElement`
-* `text: string` (textContent)
-* `value: string` (value)
-* `html: string` (outerHTML)
+* `element: HTMLElement` (`this`)
+* `text: string` (`.textContent`)
+* `value: string` (`.value`)
+* `html: string` (`.outerHTML`)
+* `readonly children: HTMLCollection` (`.children`)
+* `readonly parent: HTMLElement` (`.parent`)
 
 It also has the following methods.
 
@@ -19,7 +21,7 @@ It also has the following methods.
 
 ### Examples
 
-#### Getting & Setting Text
+#### Getting & Setting the Text of an Element
 
 ```typescript
 const element = new ClickerElement(document.getElementById("your-id-here"))
@@ -31,7 +33,7 @@ element.text = "Hello, World!"
 console.log(element.text)
 ```
 
-#### Getting & Setting HTML
+#### Getting & Setting the HTML of an Element
 
 ```typescript
 const element: ClickerElement = new ClickerElement(document.getElementById("your-id-here"))
@@ -43,7 +45,7 @@ element.html = "<p>Hello, World!</p>"
 console.log(element.html)
 ```
 
-#### Getting & Setting Value
+#### Getting & Setting the Value of an Element
 
 ```typescript
 const element: ClickerElement = new ClickerElement(document.getElementById("your-id-here"))
@@ -55,7 +57,7 @@ element.value = "Hello, World!"
 console.log(element.value)
 ```
 
-#### Getting & Setting CSS
+#### Getting & Setting the CSS of an Element
 
 ```typescript
 const element: ClickerElement = new ClickerElement(document.getElementById("your-id-here"))
@@ -65,4 +67,20 @@ console.log(element.css("color"))
 element.css("color", "#efefef")
 
 console.log(element.css("color"))
+```
+
+#### Getting the Children of an Element
+
+```typescript
+const element: ClickerElement = new ClickerElement(document.getElementById("your-id-here"))
+
+console.log(element.children)
+```
+
+#### Getting the Parent of an Element
+
+```typescript
+const element: ClickerElement = new ClickerElement(document.getElementById("your-id-here"))
+
+console.log(element.parent)
 ```
